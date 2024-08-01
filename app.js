@@ -4,7 +4,7 @@ const path = require('path');
 const methodOverride = require('method-override');
 const multer = require('multer');
 const {sequelize} = require('./models');
-
+const motoRouter = require('./routes/motoRouter');
 
 
 // Configuración de Multer para el manejo de archivos
@@ -28,6 +28,8 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(express.static('public'));
+
+app.use('/', motoRouter);
 
 app.listen(3000, async () => {
     console.log('Servidor iniciado en el puerto 3000');
