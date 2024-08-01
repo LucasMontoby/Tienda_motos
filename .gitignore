@@ -1,0 +1,37 @@
+# Carpeta de dependencias de Node.js. No es necesario incluirla en el repositorio ya que puede ser regenerada con 'npm install'.
+node_modules/
+
+# Archivos de logs generados por el sistema. No es necesario versionar estos archivos.
+*.log
+
+# Carpetas de configuración de IDE. Estas carpetas contienen configuraciones específicas del entorno de desarrollo y no deben ser compartidas.
+.vscode/
+.idea/
+
+# Archivos temporales generados por el sistema o por aplicaciones. No deben ser incluidos en el repositorio.
+*.tmp
+
+# Archivos de depuración y error generados por npm o Yarn. No es necesario versionar estos archivos.
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de bases de datos locales (por ejemplo, SQLite). Estos archivos contienen datos específicos del entorno local y no deben ser versionados.
+*.sqlite
+*.sqlite3
+
+# Archivo de configuración del entorno. Generalmente contiene variables sensibles y específicas del entorno local.
+.env
+
+# Carpeta de imágenes generadas automáticamente. Si usas un directorio para almacenar imágenes temporales o generadas, no es necesario incluirlo en el repositorio.
+public/images/
+
+# Archivos generados por el sistema operativo. No deben ser versionados.
+.DS_Store
+Thumbs.db
+
+# Carpetas generadas por herramientas de pruebas de cobertura. Estos archivos son generados automáticamente y no deben ser versionados.
+coverage/
+
+# Archivo de configuración de Sequelize CLI. Este archivo puede contener configuraciones específicas del entorno local y puede no ser relevante para el repositorio.
+sequelize-cli.json
