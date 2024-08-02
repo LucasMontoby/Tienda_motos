@@ -22,7 +22,15 @@
             <p>$<%= moto.precio %></p>
             <p>Categoría: <% moto.Categoria ? moto.Categoria.nombre : 'Sin categoría' %></p>
 
+            <a href="/motos/<%=moto.id%>/edit">Editar</a>
+            <br>
+            <br>
+            
+            <form action="/motos/<%=moto.id%>?_method=DELETE" method="POST">
+                <button type="submit">Eliminar</button>
+            </form>
        <% }) %>
+    
     </div>
 
     <a href="/">Volver a Inicio</a>

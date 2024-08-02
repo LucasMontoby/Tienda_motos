@@ -3,40 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Añadir Moto</title>
+    <title>Modificar Moto</title>
 </head>
 <body>
     <%- include('../partials/header') %>
     <h1>Añadir Nueva Moto</h1>
-    <form action="/motos/create" method="POST" enctype="multipart/form-data">
+    <form action="/motos/<%=moto.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
         <label for="nombre">Nombre: </label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" value="<%=moto.nombre%>" required>
         <br>
         <br>
 
         <label for="descripcion">Descripción: </label>
-        <input type="text" id="descripcion" name="descripcion" required>
+        <input type="text" id="descripcion" name="descripcion" value="<%=moto.descripcion%>" required>
         <br>
         <br>
 
         <label for="precio">Precio: </label>
-        <input type="number" id="precio" name="precio" step="0.01" required>
+        <input type="number" id="precio" name="precio" step="0.01" value="<%=moto.precio%>" required>
         <br>
         <br>
 
         
         <label for="imagen">Imagen: </label>
         <input type="file" id="imagen" name="imagen">
+        <p>Imagen Actual: <img src="/images/<%=moto.imagen%>"></p>
         <br>
         <br>
 
         <label for="categoria_id">Categoría: </label>
         <select id="categoria_id" name="categoria_id" required>
             <% categorias.forEach(categoria => { %>
-                <option value="<%=categoria.id%>" <%= moto.categoria_id === categoria.id ? 'selected : ''%> > <%= categoria.nombre %></option>
+                <option value="<%=categoria.id%>"><%= categoria.nombre %></option>
            <% }) %>
         </select>
-        <button type="submit">Añadir Moto</button>
+        <button type="submit">Modificar Moto</button>
     </form>
 
     <%- include('../partials/footer') %>

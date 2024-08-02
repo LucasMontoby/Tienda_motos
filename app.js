@@ -5,7 +5,7 @@ const methodOverride = require('method-override');
 const multer = require('multer');
 const {sequelize} = require('./models');
 const motoRouter = require('./routes/motoRouter');
-
+app.use(methodOverride('_method'));
 
 // Configuración de Multer para el manejo de archivos
 const storage = multer.diskStorage({
@@ -22,7 +22,6 @@ const storage = multer.diskStorage({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride('_method'));
 
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));

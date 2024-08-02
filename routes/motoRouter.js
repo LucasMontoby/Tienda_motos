@@ -24,5 +24,8 @@ router.get('/', (req, res) => {
 router.get('/motos', motoController.list);
 router.get('/motos/create', motoController.create);
 router.post('/motos/create', upload.single('imagen'), motoController.store);
+router.get('/motos/:id/edit', motoController.edit);
+router.post('/motos/:id', upload.single('imagen'), motoController.update);
+router.delete('/motos/:id', motoController.destroy);
 
 module.exports = router;
